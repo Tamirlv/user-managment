@@ -7,7 +7,7 @@ I've implemented a user management system leveraging four key AWS services: Lamb
 1. Username
 2. Password (minimum 6 characters)
 3. First name (up to 20 characters)
-4.Family name (up to 20 characters)
+4. Family name (up to 20 characters)
 5. Valid Israeli ID (9 digits)
 6. Valid phone number
 
@@ -28,7 +28,7 @@ https://8gojdyh128.execute-api.us-east-2.amazonaws.com/usermanagment/user/login?
 - Lambda function updates the given name (first name) in Cognito and DynamoDB.
 - Authorized by API Gateway, requiring a token in the headers.
 - Request Parameters:
-1. Token in the headers
+1. Token in the headers (under Authorization key)
 2. given_name
 
 Example: 
@@ -38,7 +38,7 @@ https://8gojdyh128.execute-api.us-east-2.amazonaws.com/Test/user?given_name=Shim
 - Lambda function retrieves user item from DynamoDB.
 - Authorized by API Gateway with a check ensuring the provided username in the request matches the one in the token.
 - Request Parameters:
-1. Token in the headers
+1. Token in the headers (under Authorization key)
 2. username
    
 Example: 
