@@ -43,4 +43,3 @@ https://8gojdyh128.execute-api.us-east-2.amazonaws.com/Test/user?given_name=Shim
 Example: 
 https://8gojdyh128.execute-api.us-east-2.amazonaws.com/CognitoApi/user/id?username=Tamir
 
-5. A postman collection sent 
