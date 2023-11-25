@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "3fe57dd5-0b67-4dd3-97a7-63c124a11a6d",
+		"name": "UserManagmentCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16306431"
+	},
+	"item": [
+		{
+			"name": "RegisterUserToCognitoAndDdb",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://8gojdyh128.execute-api.us-east-2.amazonaws.com/usermanagment/user?username=Tamir1&password=Tamir123@&phone_number=+972547707715&given_name=Tamir&family_name=Levv&id=316048222",
+					"protocol": "https",
+					"host": [
+						"8gojdyh128",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"usermanagment",
+						"user"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "Tamir1"
+						},
+						{
+							"key": "password",
+							"value": "Tamir123@"
+						},
+						{
+							"key": "phone_number",
+							"value": "+972547707715"
+						},
+						{
+							"key": "given_name",
+							"value": "Tamir"
+						},
+						{
+							"key": "family_name",
+							"value": "Levv"
+						},
+						{
+							"key": "id",
+							"value": "316048222"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the JSON response\r",
+							"const jsonData = JSON.parse(responseBody);\r",
+							"\r",
+							"// Set the access token as a global variable\r",
+							"pm.globals.set(\"accessToken\", jsonData.accessToken);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://8gojdyh128.execute-api.us-east-2.amazonaws.com/usermanagment/user/login?username=Tamir1&password=Tamir123@",
+					"protocol": "https",
+					"host": [
+						"8gojdyh128",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"usermanagment",
+						"user",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "Tamir1"
+						},
+						{
+							"key": "password",
+							"value": "Tamir123@"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateYourGivenName",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://8gojdyh128.execute-api.us-east-2.amazonaws.com/Test/user?given_name=Shimon1",
+					"protocol": "https",
+					"host": [
+						"8gojdyh128",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"Test",
+						"user"
+					],
+					"query": [
+						{
+							"key": "given_name",
+							"value": "Shimon1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserData",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{accessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://8gojdyh128.execute-api.us-east-2.amazonaws.com/CognitoApi/user/id?username=Tamir1",
+					"protocol": "https",
+					"host": [
+						"8gojdyh128",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"CognitoApi",
+						"user",
+						"id"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "Tamir1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
