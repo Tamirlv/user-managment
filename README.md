@@ -5,7 +5,11 @@ I've implemented a user management system leveraging four key AWS services: Lamb
 - Error handling ensures that if issues arise with DynamoDB or the confirmation process, the user is removed from the Cognito table.
 - Request Parameters:
 1. Username
-2. Password (minimum 6 characters)
+2. Password - must include:
+   - minimum 6 characters
+   - uppercase letter
+   - lower case letter
+   - special character (e.g., "@", "!") 
 3. First name (up to 20 characters)
 4. Family name (up to 20 characters)
 5. Valid Israeli ID (9 digits)
