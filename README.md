@@ -44,4 +44,5 @@ https://8gojdyh128.execute-api.us-east-2.amazonaws.com/Test/user?given_name=Shim
 Example: 
 https://8gojdyh128.execute-api.us-east-2.amazonaws.com/CognitoApi/user/id?username=Tamir
 
-5. Postman collection is in the repository (https://github.com/Tamirlv/user-managment/blob/main/postman%20collection/UserManagmentCollection.postman_collection.json).
+5. Postman collection is in the repository:
+   https://github.com/Tamirlv/user-managment/blob/main/postman%20collection/UserManagmentCollection.postman_collection.json
