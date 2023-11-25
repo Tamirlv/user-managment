@@ -40,6 +40,7 @@ https://8gojdyh128.execute-api.us-east-2.amazonaws.com/Test/user?given_name=Shim
 - Request Parameters:
 1. Token in the headers
 2. username
+   
 Example: 
 https://8gojdyh128.execute-api.us-east-2.amazonaws.com/CognitoApi/user/id?username=Tamir
 
